@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Layout - Flex</title>
+
+		<style>
+
+            body {
+                /* This gets rid of defaault browser defined settings for body */
+                margin: 0;
+                padding: 0;
+            }
+
+            section {
+                
+                /* This will set the height of the element that is holding all of our content to be at least 100 of our viewport (any screen size), it's important to use min-height instead of height because then you alow this element to expand if the content inside grows bigger than a 10vh, otherwise it would cause the content to overflow. */
+                min-height: 100vh;
+
+          
+
+                /* This is one of the easiest ways to center an element on a page. in our case we are centeringg the container to our rectangular divs. */
+                display: flex;
+
+                justify-content: center;
+                align-items: center;
+               
+				/* creates frame around your elements */
+
+                /* margin: auto; */
+                /* text-align: center; */
+
+                background-color: aqua;
+            }
+
+			#container {
+				background-color: aliceblue; 
+                /* here I'm using the attribute viewport width and viewport height to define the size of my container */
+             
+        
+
+                min-width: 90vw;
+				min-height: 90vh;
+
+				/* the default attribute for the property display is "block" for most elements or "inline" (images, videos, links) when I change it to display "flex", all the items inside that element tag (in our case the div container) will become flex-items) */
+
+				
+
+				display: flex;
+
+				justify-content: center;
+				align-items: center;
+
+				/* aligns items center in the section */
+
+
+                
+
+				/* THis properties control the positioning of the elements inside the color-interpolation-filters
+            justify-content organizes them horizontally
+            align-itemss organizes them vertically */
+
+				/* justify-content: space-around;
+				align-items: space-around; */
+
+				/* You can change the order of elements on the page with these two properties. These will also change the orientation of your items on the page from horizontal display to vertical */
+
+				/* flex-direction: row-reverse; */
+				/* flex-direction: column-reverse; */
+
+
+                /* You can also usse a property to tell elements to fall in one row or if you waant them to wrap the edge of your container */
+
+                /* The property for that is  */
+
+                flex-wrap: wrap;
+
+         
+
+               
+			}
+
+
+			#container div {
+			
+				margin: 22px;
+				
+	
+			
+			}
+
+
+			#one {
+				background-color: darkkhaki;
+
+				width: 100%;
+				height: 300px;
+				/* margin: 3%; */
+
+             
+			}
+
+			#two {
+				background-color: darkorange;
+
+				width: 30%;
+				height: 25px;
+				/* margin: 1%; */
+			}
+
+			#three {
+				background-color: rgb(0, 183, 255);
+
+				width: 30%;
+				height: 45px;
+				/* margin: 1%; */
+			}
+
+
+            #four {
+				background-color: rgb(155, 107, 189);
+
+				width: 30%;
+				height: 25px;
+				/* margin: 1%; */
+			}
+
+			/* #five {
+				background-color: rgb(255, 0, 128);
+
+				width: 300px;
+				height: 300px;
+			}
+
+			#six {
+				background-color: rgb(0, 255, 55);
+
+				width: 300px;
+				height: 300px;
+			}
+
+            #seven {
+				background-color: rgb(171, 107, 189);
+
+				width: 300px;
+				height: 300px;
+			}
+
+			#eight {
+				background-color: rgb(229, 255, 0);
+
+				width: 300px;
+				height: 300px;
+			}
+
+			#nine {
+				background-color: rgb(131, 39, 218);
+
+				width: 300px;
+				height: 300px;
+			} */
+
+			
+
+
+
+		</style>
+	</head>
+
+	<body>
+		<!-- The section encompasses three  other divs inside it -->
+
+        <section>
+
+		<div id="container">
+			<div id="one"></div>
+
+			<div id="two"></div>
+
+			<div id="three"></div>
+
+            <div id="four"></div>
+
+			<!-- <div id="five"></div> -->
+<!-- 
+			<div id="six"></div>
+
+            <div id="seven"></div>
+
+			<div id="eight"></div>
+
+			<div id="nine"></div> -->
+
+
+		</div>
+<!-- 
+		<h1><a href="https://cssgridgarden.com/
+			"></a>Flex Froggy Game</h1> -->
+
+
+    </section>
+
+	</body>
+</html>

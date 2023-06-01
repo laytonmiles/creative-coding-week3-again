@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Example 1 </title>
+    <style>
+
+/* This is just aa directory file for your gardens */
+
+       body
+       {
+        margin: 0;
+            padding: 0;
+       }
+
+.garden {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .garden div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            height: 100%;
+            width: 50%;
+            padding: 1em;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        a {
+            color:aliceblue;
+            text-decoration: none;
+            font-size: 64px;
+            font-family: helvetica;
+
+        }
+  
+        #one {
+            background-color: aquamarine;
+        }
+
+        #one:hover {
+            background-color: rgb(44, 199, 147);
+
+        }
+
+        #two {
+            background-color: rgb(127, 157, 255);
+        }
+
+        #two:hover {
+            background-color: rgb(75, 44, 199);
+
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <section class="garden">
+
+        
+        <div id="one">
+            
+           <a href="garden1.html">Portal to garden 1</a>
+        </div>
+        <div id="two">
+            <a href="garden2.html">Portal to garden 2</a>
+
+        </div>
+       
+    </section>
+</body>
+
+</html>

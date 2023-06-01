@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Layout - Flex</title>
+
+		<style>
+			body {
+				/* This gets rid of defaault browser defined settings for body */
+				/* margin: 0;
+                padding: 0; */
+			}
+
+			section {
+				/* This will set the height of the element that is holding all of our content to be at least 100 of our viewport (any screen size), it's important to use min-height instead of height because then you alow this element to expand if the content inside grows bigger than a 10vh, otherwise it would cause the content to overflow. */
+				/* min-height: 100vh; */
+			}
+
+			#container {
+				/* this is just so I can easily see the boundaries of the container */
+				background-color: rgb(239, 244, 248);
+				width: 90vw;
+				height: 90vh;
+
+				/* In CSS Grid the first step is to define the grid template 
+				in our case I want to display a grid of 3x3 */
+
+				display: grid;
+
+				/* 
+				You can use hard units (px), percentages, or ratios to define the size of your grid;
+				for the sake of this exercise we are using whole numbners */
+				/* could have used percentages and hard units like vh, vw, px */
+
+				grid-template-rows: 1fr 1fr 1fr 1fr ;
+				grid-template-columns: 1fr 1fr 1fr ;
+			
+
+
+			}
+
+			#one {
+				background-color:rgb(43, 132, 19);
+				border: 1px solid rgba(0, 0, 0, 0.1);
+
+
+				/* We are going to be defining the size of our divs using a css grid property instead of width and height */
+
+				/* grid-column-start: 2; */
+				/* if you want your div to occupy a new position or more than one space on the grid you caan use the grid-column-end to define where the div stops */
+
+				/* grid-column-end: 4; */
+
+				/* You can also use the property grid-column to determine the beginning and end of an item using css grid
+				This is mostly to avoid having to type both properties all the time */
+
+				/* grid-column: 2 / 3; */
+
+				/* The same works for defining the row. Effectively you have a map in which you can place elements in the page, and you are giving the coordinates */
+
+				/* grid-row: 2 / 3; */
+
+				/* You are going to start to realize that the items are being displayed in an area of the grid you defined for the container. And you guessed it, you can also define the size of the div by an area of the grid, as follows
+				Below you will find the equivalent of:
+				grid-row-start, grid-column-start, grid-row-end, followed by grid-column-end.;
+				*/
+
+				grid-area: 1 / 1 / 3 / 2;
+
+
+				align-content: center;
+				
+
+
+			}
+
+			#two {
+				background-color: rgb(43, 132, 19);
+
+				grid-area: 1 / 3 / 3 / 3;
+				opacity: 50%;
+		
+			}
+
+			#three {
+				background-color: rgb(79, 19, 132);
+				grid-area: 1 / 2 / 3 / 3;
+				opacity: 25%;
+		
+			}
+
+			#four {
+				background-color: rgb(155, 107, 189);
+			}
+
+			#five {
+				background-color: rgb(255, 0, 128);
+			}
+
+			#six {
+				background-color: rgb(0, 255, 55);
+			}
+
+			#seven {
+				background-color: rgb(107, 189, 163);
+			}
+
+			#eight {
+				background-color: rgb(229, 255, 0);
+			}
+
+			#nine {
+				background-color: rgb(131, 39, 218);
+			}
+
+			/* #kangaroo {width: 20%;
+			position: fixed;
+		margin-top: 40px;
+	margin-left: 40px;} */
+
+			/* fixed means the object moves with the scroll */
+		</style>
+	</head>
+
+	<body>
+		<!-- The section encompasses three  other divs inside it -->
+
+		<section>
+			<div id="container">
+				<div id="one">
+					<img width="100%" id="kangaroo" src="../images/pointshoot_decmarch_125.jpg" alt="kangaroo"
+					>
+		
+				</div>
+
+				<div id="two"></div>
+				<!-- style elements inside their div -->
+
+			<div id="three"></div>
+
+				<!-- <div id="four"></div>
+
+			<div id="five"></div>
+
+			<div id="six"></div>
+
+            <div id="seven"></div>
+
+			<div id="eight"></div>
+
+			<div id="nine"></div> -->
+			</div>
+
+			<!-- <h1><a href="https://flexboxfroggy.com/
+				"></a>Flex Froggy Game</h1> -->
+		</section>
+	</body>
+</html>

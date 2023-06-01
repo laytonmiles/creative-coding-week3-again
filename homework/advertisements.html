@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            /* This gets rid of defaault browser defined settings for body */
+            margin: 50px;
+            padding: 0;
+            background-color: rgb(255, 255, 255);
+        }
+
+        section {
+            /* This will set the height of the element that is holding all of our content to be at least 100 of our viewport (any screen size), it's important to use min-height instead of height because then you alow this element to expand if the content inside grows bigger than a 10vh, otherwise it would cause the content to overflow. */
+            min-height: 100vh;
+            background-blend-mode: difference;
+        }
+
+        #container {
+            /* this is just so I can easily see the boundaries of the container */
+            background-color: rgb(255, 255, 255);
+            min-width: 90vw;
+            min-height: 90vw;
+            
+
+            /* In CSS Grid the first step is to define the grid template 
+            in our case I want to display a grid of 3x3 */
+
+            display: grid;
+            justify-content: space-evenly;
+            column-gap: 40px;
+            row-gap: 40px;
+           z-index: 2;
+           position: relative;
+           padding-top: 200px;
+           
+           
+        
+    
+
+            /* 
+            You can use hard units (px), percentages, or ratios to define the size of your grid;
+            for the sake of this exercise we are using whole numbners */
+            /* could have used percentages and hard units like vh, vw, px */
+          
+        
+
+
+
+        }
+       
+
+      
+           
+
+
+            /* We are going to be defining the size of our divs using a css grid property instead of width and height */
+
+            /* grid-column-start: 2; */
+            /* if you want your div to occupy a new position or more than one space on the grid you caan use the grid-column-end to define where the div stops */
+
+            /* grid-column-end: 4; */
+
+            /* You can also use the property grid-column to determine the beginning and end of an item using css grid
+            This is mostly to avoid having to type both properties all the time */
+
+            /* grid-column: 2 / 3; */
+
+            /* The same works for defining the row. Effectively you have a map in which you can place elements in the page, and you are giving the coordinates */
+
+            /* grid-row: 2 / 3; */
+
+            /* You are going to start to realize that the items are being displayed in an area of the grid you defined for the container. And you guessed it, you can also define the size of the div by an area of the grid, as follows
+            Below you will find the equivalent of:
+            grid-row-start, grid-column-start, grid-row-end, followed by grid-column-end.;
+            */
+        .images {opacity: 85%;
+        z-index: 1;
+       }
+    /* #overlay {font-size: 20px;
+    z-index: 99;
+    position: absolute;} */
+
+h1 {font-size: 60px;position: fixed;
+padding-left: 90px;
+z-index: 100; }
+
+    #one {grid-area: 1 / 3;}
+
+    #p1 {grid-area: 1 / 1 / 2 / 2;
+    z-index: 99; position: absolute;}
+
+     #two { grid-area: 2 / 1;}
+
+     #p2 {grid-area: 2 / 2 / 2 / 2;
+    z-index: 99; }
+
+    #bose {grid-area: 3 / 3;}
+
+    #item1 {grid-area: 4 / 3; z-index: 99;}
+
+    #item2 {grid-area: 6 / 3; z-index: 99;}
+
+    #item3 {grid-area: 8 / 1; z-index: 99;}
+
+    #item4 {grid-area: 9 / 2; z-index: 99;}
+
+    #item5 {grid-area: 12 / 1; z-index: 99;}
+
+    #four {grid-area: 4 / 2;}
+
+    #item6 {grid-area: 14 / 1; z-index: 99;}
+
+    #p3 {grid-area: 16 / 2; z-index: 99;}
+
+    #p4 {grid-area: 17 / 1;}
+
+    #five {grid-area: 2 / 3;}
+
+    #six {grid-area: 24 / 3;}
+
+    #seven{grid-area: 6 / 2}
+
+    #eight{ grid-area: 8 / 3}
+
+    #item7 {grid-area: 18 / 3;}
+
+    #p5 {grid-area: 19 / 3;}
+
+    #p6 {grid-area: 20 / 1;}
+    
+    #nine{grid-area: 8 / 2}
+
+    #ten{grid-area: 9 / 1}
+
+    #eleven{ grid-area: 10 / 2}
+
+    #twelve{grid-area: 11 / 3}
+
+    #thirteen{grid-area: 11 / 1}
+
+    #fourteen{grid-area: 12 / 2}
+
+    #fifteen{grid-area: 13 / 1}
+    
+    #sixteen{grid-area: 14 / 2}
+
+    #seventeen{grid-area: 14 / 3}
+
+    #eighteen{grid-area: 15 / 3}
+
+    #nineteen{grid-area: 16 / 1}
+
+    #twenty{grid-area: 17 / 3}
+    
+    #twentyone{grid-area: 18 / 2}
+
+    #twentytwo{grid-area: 18 / 1}
+
+    #twentythree{grid-area: 13 / 3}
+
+    #twentyfour{grid-area: 21 / 1}
+
+    #twentyfive{grid-area: 9 / 3}
+
+    #twentysix{grid-area: 20 / 3}
+
+    #item8 {grid-area: 21 / 2;}
+    
+    #p7 {grid-area: 22 / 3;}
+
+    #p8 {grid-area: 24 / 2;}
+
+    #twentyseven{grid-area: 21 / 3}
+
+    #altoids_04{grid-area: 19 / 1}
+
+    #altoids_03{grid-area: 22 / 1}
+
+    #dellarobbia_02{grid-area: 23/ 2}
+
+    #dellarobbia_03 {grid-area: 16 / 3}
+
+        /* fixed means the object moves with the scroll */
+    </style>
+</head>
+<h1>A GOOD PLACE TO WORK IS HARD TO FIND</h1>
+<body>
+    
+    <!-- The section encompasses three  other divs inside it -->
+    <section>
+        
+        </div>
+        <div id="container" class="images"> 
+            
+            <div id="one">
+            <img src="../images/dwell advertisements/2001/altoids.jpeg" alt="altoids1" width="100%">
+            </div>
+            <div id="p1"><p>
+
+                The first four chapters of this book have described abusive work and what causes it. Because you may not have experienced a supportive, abuse-free environment, the principal objective of this chapter is to give you a vivid picture of what a decent place to work looks like. To begin, you will read the true story of one work group with six members who experienced healthy work for up to four years. Then you will learn what these six people—along with other members of their department—did to prevent their department from reverting to the overcontrol and ongoing (neglectful) abuse experienced by staff in the other divisions of the same company.
+                
+                In this chapter you won't see details about how to change workplaces using collaborative processes to make them abuse-free and productive, because many books, some excellent, have already been written about how to introduce these processes. It’s also true that no one person can change an organization, so reading detailed specifics about how you can do it would be misleading. However, you will see summary information from three sources that explain briefly how the example work group became collaborative.
+                
+                Three experts in organizational change who have written extensively on how to share power at work are Robert F. Allen, Rensis Likert, and W. Edwards Deming. All three of these authors agree that changing organizations is complex. It requires many years for organizations to install and secure healthy norms and for all members to adapt to the new norms. Robert Allen’s writings present a comprehensive four-step plan for changing norms. Rensis Likert’s books establish diagnostic measures for deciding when an organization has stabilized its norms and become fully collaborative. W.
+                
+                116
+                
+                Edwards Deming describes characteristics of collaborative managers that are essential for lasting, shared-power change. These three sources inform this chapter.</p></div>
+
+                <div id="p2"> <p>What a Decent Place to Work Looks Like
+
+                    Most working people may never experience a fully supportive and healthy work group, because so few of them exist (less than one out of twenty in the United States). The tragedy of this is that you may never discover your full potential unless you experience working in a positive-norm environment that brings out your best.
+                    
+                    Until one social worker experienced being part of a project group that was collaborative and nonshaming, she believed that her distrust response, triggered in every former job, was her own fault. Feedback from previous work groups supported her belief that she was the cause of her anxiety, since these organizations, like most, were in denial about their sink-or-swim (every person for him- or herself) norms. Only after she experienced participative work in her new position could she finally believe she was capable of relaxing and trusting her fellow workers.
+                    
+                    Some jobs may at first appear to have supportive cultures, and the shortcomings may begin to chafe only after a few months. This happens because some people who badly want and deserve a decent place to work won’t allow themselves to spot trouble until it’s too late. Maxine called her closest friend to report she had found the ideal job as an order taker for a new clothing manufacturer. “They are genial people and we have flex hours!” she said excitedly. She called again months later: “I was suddenly laid off! People were so friendly they were afraid to tell me I wasn’t doing the job the way they wanted it done!” In her first three months on the job, Maxine hadn’t recognized the company norm that stated, “Around here everyone appears friendly and avoids confronting differences until it’s too late.”
+                    
+                    The following are five positive characteristics of the work group in the case example you examine next in this chapter. The fist encourages you to uncover these attributes while reading the example case to help in your assessment of what makes a truly wholesome place to work.</p></div>
+
+                    <div id="item1"> <h2>1. People see each other in depth, as unique individuals, rather than as bodies that fill slots. Each person is addressed according to his or her specific cims and needs, in order to assure maximum development as well as superior performance.
+</h2></div>
+
+                       
+                
+                    <div id="item2"> <h2> 2. People work toward successful and satisfying alignment of individual self-interests and organizational interests without competition. They cooperate willingly—and the organization benefits—when each person’s
+                        
+                            self-interest concerns are addressed before making decisions that affect them.
+                </h2></div>
+                        <div id="item3"> <h2>  3. People feel safe, their contributions are valued, and collaboration becomes truly effective; unexpected and valuable task results arise. People start to experience community—perhaps for the first time.
+                     
+                       
+                        </h2></div>
+                        <div id="item4"> <h2> 4. People accept differences as normal and don’t avoid them. They resolve conflicts deeply and keep the development and self-interests of each person in mind when finding solutions.
+                        
+                        </h2></div>
+                        <div id="item5"> <h2> 5. People enlarge their power without others’ having to lose it. Win-win feelings surpass and replace what were formerly competitive win-lose (equals lose-lose) motives
+                       
+                        </h2></div>
+
+                        <div id="item6"> <h2>What Happened to the Pioneering Research Group</h2> </div>
+
+                        <div id="p3"> 
+                            <p>
+
+                            The first week after Charles quit the company, Robert called an announcement meeting that lasted less than half an hour. He handed out performance appraisal MBO forms and a list of the new requirements for employment in the group. When no one spoke, Robert said, “It’s not as bad as all that. We have the best people here, and I’m sure you will all merit a raise.”
+                            
+                            Beth adjusted easily and rapidly to the change, because she was able to reenter the work trance she had used for many years before joining the pioneering research team. She simply told herself, “It’s time to face the real world once again!” She resumed her former behavior of withholding information from the men and concocted false patent leads that she leaked to Larry and John. She distanced herself from Susan, after having become closer during the “Women’s Needs and Norms” workshop. Being friendly with Susan made it harder for Beth to give Susan orders and performance reviews.
+                            
+                            </p></div>
+
+                            <div id="p4"> <p>At heart, Larry was an upwardly mobile competitor, but because he had not worked for industry before joining the research team under Charles, he had not perfected adversarial skills that could match Beth’s. Within three months, however, he was more comfortable than he had been in his first four years with the company. Now he was as consistently cutthroat against other men, and as discriminatory against women, as he had been in graduate school. He enjoyed competitive warfare with Beth, and he withheld as much information from her as she did from him. He also proved how hard-nosed he could be with Mark and Susan, by requiring them to give him each evening a copy of their daily reports intended for Robert.
+                            
+                                John didn’t allow others to see the confusion and internal conflict he felt. It was obvious that the group was now a competitive war zone, and he could
+                                
+                                become someone’s target if his vulnerability became visible. John’s idealism no longer had an outlet, and pursuing success by achieving power over others was not satisfying. He didn’t mourn his loss of freedom; instead, as many times before, he unflinchingly narrowed his interests and expectations in order to survive. In the evenings and on weekends he took up long-distance running; within six months he was completing twenty-six-mile marathons, and within a year he was finishing with the leaders.
+                                
+                                Consciously, Susan never noticed the impact that having Robert for a boss had on her life, but unconsciously, the consequence of his neglectful abuse crushed her. She hadn’t worked with Charles long enough to recognize and to fully value the respect he insisted that she receive from Larry, John, and Mark—and from Beth during the last weeks. Her performance under Robert did not decline; it just did not improve. She was not able to fulfill her potential as would have been possible in a team environment.</p></div>
+            
+            
+                            <div id="item7"><h2>SCAPEGOATING BEGINS</h2></div>
+
+                            <div id="p5"> <p>Having Robert for a boss was a setup for Mark, who had become dependent on Charles to reassure him that enjoying one’s livelihood is legitimate. Mark was reminded by everyone’s new defensive behaviors that delighting in one’s work was no longer acceptable.
+
+                                At first, Mark handled his relating with Robert by taking orders from him without reacting; he remained silent most of the time. Later he became more openly bitter when Robert decided to implement discipline as a way to improve Mark’s performance. He began by asking Mark to surrender to him the keys to the tool cabinet, and by requiring Mark to begin logging everyone’s use of the lab’s tools, on the pretext of preventing loss to other groups in the department.
+                                
+                                The way the others in the group related to Mark also shifted. Initially, Mark hoped John would be his friend, a replacement for Charles, because Mark knew that John missed Charles; but John would no longer open himself to Mark. Beth did not relate to Mark empathetically before; now she had Robert’s permission to be even more distant from him. Susan had reason to feel closer to Mark now that they both were being exploited without chance for relief; but they were each too isolated in their individual pain to share their mutual feelings of abuse. </p></div>
+            
+                            <div id="p6"><p>Difficulties escalated for Mark six months into the new regime. Under Robert’s directive, Mark was to work for Larry, assisting him by operating a pilot vacuum distillation unit for recovering in pure form a heat-sensitive organic compound, a precursor chemical for the manufacture of another pharmaceutical.
+
+                                On a Friday afternoon Robert made the decision to continue the distillation into the evening, rather than shut the unit down and lose yield of the valuable chemical. Because Mark was an hourly worker, he was allowed a free pass for early dinner as well as time-and-a-half pay for the extra hours he would work Friday evening. On the way to the cafeteria, Mark asked Larry to relieve him for half an hour by keeping an eye on the distillation column to prevent vacuum loss and high temperatures, which would destroy the heatsensitive chemical in the unit.
+                                
+                                Larry, who was preoccupied with his own concerns and the upcoming weekend, and like everyone else in the group now believed that Mark’s wishes were inconsequential, took Mark’s request too lightly. Larry went home without remembering that Mark had asked him to watch the distillation unit and forgetting Mark’s warning and instructions. While Mark was at dinner,
+                                
+                                there was a fire in the lab that resulted in damage to the equipment, loss of the valuable chemical, and a fire report that was phoned to Louis Humphrey at his home Friday evening. On Monday, Larry denied Mark’s claim that Mark had asked him to watch the unit, and Robert put Mark on thirty-day notice as a disciplinary action.</p></div>
+                             
+                             <div id="item8"> <h2> BREAKDOWN </h2></div>
+
+                             <div id="p7"> <p>The unjust action against Mark—a culmination of ongoing abuse, acute scapegoating, and denial of due process—triggered Mark to respond in two irrational ways. The first was that Mark blamed himself for the accident and felt additional shame about the years he enjoyed working with Charles. He admitted to Robert that he caused the fire by leaving the distillation column unattended while he ate dinner Friday evening, and he apologized to Robert for having “goofed off” for four years before Robert became supervisor of the group.
+
+                                The second irrational behavior was that, alternating with shame about the accident, Mark felt paranoid anxiety about being persecuted. He was sure that Vyrol had bugged his home phone, and he made repeated calls to the phone company requesting their assistance in putting a stop to Vyrol’s supposed wiretaps. An acute paranoid episode led to his being hospitalized when he imagined that Vyrol had hired detectives to keep him under surveillance evenings and weekends.</p> </div>
+
+
+                             <div id="p8"> <p>Mark’s wife called Charles at his home, described what had happened to Mark since Charles had left Vyrol, and asked him, as a favor, to visit Mark in the hospital. When Charles saw Mark, he tried to reassure him of his value as an employee. Mark felt torn between wanting Charles’s support and having to harden himself against it to survive at Vyrol. He became angry at the bind and ended by pushing Charles away.
+
+                                After the hospitalization, Mark was off work for a month. He entered a company-funded rehabilitation program that included counseling. When Mark returned to work while still on medication, his appearance and behavior had changed noticeably. He had a close-cropped military-style haircut, he had lost twenty pounds, and he was dressed in clean-cut, conservative clothes. He addressed Robert as “Sir.” He was on his best behavior and promised Robert that he would follow whatever orders Robert required, so that he might recover from the incident and remain an employee in good standing at Vyrol.</p> </div>
+                                <div id="two">
+
+                <img src="../images/dwell advertisements/2001/dellarobbia.jpeg" alt="dellarobbia"  width="100%" >
+            
+            </div>
+            <!-- style elements inside their div -->
+
+        <div id="bose"> <img src="../images/dwell advertisements/2001/bose.jpeg" alt="bose" width="100%"> </div>
+
+            <div id="four"> <img src="../images/dwell advertisements/2001/windowfilm.jpeg" alt="window" width="100%">
+            </div>
+
+        <div id="five"> <img src="../images/dwell advertisements/2001/annsacks_02.jpeg" alt="annsacks" width="100%">
+        </div>
+
+       
+        <div id="seven"> <img src="../images/dwell advertisements/2001/bombay2.jpeg" alt="bombay2" width="100%">
+        </div>
+        <div id="eight"> <img src="../images/dwell advertisements/2001/bbcamerica.jpeg" alt="bbcamerica" width="100%">
+        </div>
+        <div id="nine"> <img src="../images/dwell advertisements/2001/abboud_01.jpeg" alt="abboud_01" width="100%">
+        </div>
+
+        <div id="ten"> <img src="../images/dwell advertisements/2001/altoids_02.jpeg" alt="bombay2" width="100%">
+        </div>
+        <div id="eleven"> <img src="../images/dwell advertisements/2001/angelaadams.jpeg" alt="angelaadams" width="100%">
+        </div>
+        <div id="twelve"> <img src="../images/dwell advertisements/2001/cappelini_01.jpeg" alt="cappelini_01" width="100%">
+        </div>
+        <div id="thirteen"> <img src="../images/dwell advertisements/2001/annsacks.jpeg" alt="annsacks" width="100%">
+        </div>
+
+        <div id="fourteen"> <img src="../images/dwell advertisements/2001/annsacks_03.jpeg" alt="annsacks_03" width="100%"> </div>
+
+        <div id="fifteen"> <img src="../images/dwell advertisements/2001/bisazza.jpeg" alt="bisazza" width="100%"> </div>
+
+        <div id="sixteen"> <img src="../images/dwell advertisements/2001/britishairways.jpeg" alt="britishairways" width="100%"> </div>
+        <div id="seventeen"> <img src="../images/dwell advertisements/2001/californiaclosets.jpeg" alt="californiaclosets" width="100%"> </div>
+
+        <div id="eighteen"> <img src="../images/dwell advertisements/2001/cappelini_02.jpeg" alt="capellini" width="100%"> </div>
+
+        <div id="nineteen"> <img src="../images/dwell advertisements/2001/coach.jpeg" alt="coach" width="100%"> </div>
+
+        <div id="twenty"> <img src="../images/dwell advertisements/2001/luminaire_06.jpeg" alt="luminaire" width="100%"> </div>
+
+        <div id="twentyone"> <img src="../images/dwell advertisements/2001/luminaire_07.jpeg" alt="luminaire" width="100%"> </div>
+
+        <div id="twentytwo"> <img src="../images/dwell advertisements/2001/luminaire_08.jpeg" alt="luminaire" width="100%"> </div>
+
+        <div id="twentythree"> <img src="../images/dwell advertisements/2001/luminaire_04.jpeg" alt="luminaire" width="100%"> </div>
+
+        <div id="twentyfour"> <img src="../images/dwell advertisements/2001/luminaire_05.jpeg" alt="luminaire" width="100%"> </div>
+
+        <div id="twentyfive"> <img src="../images/dwell advertisements/2001/luminaire_03.jpeg" alt="luminaire" width="100%"> </div>
+
+        <div id="twentysix"> <img src="../images/dwell advertisements/2001/luminaire_02.jpeg" alt="luminaire" width="100%"> </div>
+
+        <div id="twentyseven"> <img src="../images/dwell advertisements/2001/altoids_05.jpeg" alt="altoids" width="100%"> </div>
+
+        <div id="altoids_04"> <img src="../images/dwell advertisements/2001/altoids_04.jpeg" alt="altoids" width="100%"> </div>
+
+        <div id="altoids_03"> <img src="../images/dwell advertisements/2001/altoids_03.jpeg" alt="altoids" width="100%"> </div>
+
+        <div id="dellarobbia_02"> <img src="../images/dwell advertisements/2001/dellarobbia_02.jpeg" alt="dellarobbia_02" width="100%"> </div>
+
+        <div id="dellarobbia_03"> <img src="../images/dwell advertisements/2001/dellarobbia_03.jpeg" alt="dellarobbia_03" width="100%"> </div>
+
+
+
+   
+    </section>
+    
+</body>
+</html>

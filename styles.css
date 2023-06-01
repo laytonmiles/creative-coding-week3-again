@@ -8,3 +8,9 @@ h1{color: blanchedalmond;
 h2{width: 250px; height: 300px;}
 
 body{text-justify: newspaper;}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }

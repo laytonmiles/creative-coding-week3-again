@@ -1,0 +1,126 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Example 1 </title>
+    <!-- We are going to be adding new fonts here, they have to be inside the head tag -->
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+    <style>
+
+
+
+       body
+       {
+        /* margin: 0;
+            padding: 0; */
+            background-color: black;
+       }
+       
+       h1{font-family: 'Monoton', cursive;
+       font-size: 4.5em;
+       padding: 30px 40px 30px 40px;
+}
+
+p{
+
+    z-index: 1;
+}
+.flow {
+    /* We will dive deeper into different displays for layout next classs */
+
+ 
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: aliceblue;
+        }
+
+        /* We are going to use our custom fonts here, when they are in the header they are just permitting us to use them as a property */
+
+
+
+
+/* Here we are going to learn how to use position to change the place where an element is "supposed to land" */
+
+#move {
+    position: relative;
+    top: -200px;
+    left: 300px;
+    width: 60%;
+    z-index: -99;
+ 
+}
+
+/* On the image overllap div we are going to learnn how to use display block and opacity to hide and show a given elemnent */
+
+/* We are also gonna play a bt with some effects */
+
+#imgOverlap {
+    /* margin: auto;
+    text-align: center; */
+   
+}
+
+#imgOverlap img {
+    background-color: aliceblue;
+    /* width: 25%;
+
+    border: 10px solid blue;
+    margin: 2%; */
+
+    
+}
+#imgOverlap img:hover{ background-color: brown;
+    width: 25%;
+    opacity: 65%;
+    display: none;
+    
+    /* used to hide and show elements on a page */
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <section class="flow">
+
+        <h1>The Code's Silent Realm: A Short Poem
+        </h1>
+        
+
+        <p>Amidst the code's realm where keystrokes abound,
+            The mystic environment glows around.
+            With silent taps, the ones and zeros align,
+            As lines of code become art, divine.</p>
+
+            <p>The coder weaves their craft within this sphere,
+                With rhythm and flow that few else can hear.
+                In this enchanted land where code reigns high,
+                Imagination and logic both apply.</p>
+
+<div id="img1">
+                <img id="move" src="images/computersNature.gif" alt="gif animation about computers">
+        
+            </div>
+
+            <div id="imgOverlap">
+                <img id="one" src="images/Miroodles - Mono Comp (1).png" alt="series of one item illustrations">
+                <img id="two" src="images/Miroodles - Mono Comp (2).png" alt="series of one item illustrationsn">
+                <img src="images/Miroodles - Mono Comp (3).png" alt="series of one item illustrationsn">
+
+
+            </div>
+       
+    </section>
+</body>
+
+</html>
